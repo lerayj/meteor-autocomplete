@@ -8,11 +8,11 @@ Package.describe({
 Package.onUse(function (api) {
   api.versionsFrom("1.0");
 
-  api.use(['blaze', 'templating', 'jquery', 'check', 'tracker'], 'client');
+  api.use(['blaze', 'templating', 'jquery'], 'client');
   api.use(['coffeescript', 'underscore']); // both
   api.use(['mongo', 'ddp']);
 
-  api.use("dandv:caret-position@2.1.1", 'client');
+  api.use("dandv:caret-position@2.1.0-3", 'client');
 
   // Our files
   api.addFiles([
@@ -27,6 +27,7 @@ Package.onUse(function (api) {
   ], 'server');
 
   api.export('Autocomplete', 'server');
+  api.export('AutoCompleteRecords', 'client');
   api.export('AutocompleteTest', {testOnly: true});
 });
 
